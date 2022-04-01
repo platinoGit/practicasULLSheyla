@@ -1,0 +1,4 @@
+com\mycompany\Launcher.class
+es\gobcan\platino\servicios\opendata\utils\JsonToObjectProcedimiento.class
+com\mycompany\CamelRoute.class
+es\gobcan\platino\servicios\opendata\utils\JsonToObjectServicio.class
