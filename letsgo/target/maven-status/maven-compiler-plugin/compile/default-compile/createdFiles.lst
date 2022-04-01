@@ -1,0 +1,5 @@
+com\mycompany\Launcher.class
+downloader\PeticionREST.class
+downloader\Service.class
+downloader\MyObject.class
+com\mycompany\CamelRoute.class
