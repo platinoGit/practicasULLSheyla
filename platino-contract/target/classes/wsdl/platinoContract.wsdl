@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://datos.abiertos.es/platino" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="platinoContract" targetNamespace="http://datos.abiertos.es/platino">
+
+<!-- Notas: verificar el tipo de dato que devuelvo (en los metodos esta mal).p.ejm pasar el id a los metodos como parametros--> 
+
+  <wsdl:types>
+    <xsd:schema xmlns:tns="http://datos.abiertos.es/platino" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://datos.abiertos.es/platino" version="1.0"> 
+	<xsd:import namespace="http://www.w3.org/2005/05/xmlmime"/>
+	
+		<xsd:element name="getUnidAdmin" type="tns:getUnidAdmin"/>	
+		<xsd:element name="getUnidAdminResponse" type="tns:getUnidAdminResponse"/>
+		<xsd:element name="getDepartamento" type="tns:getDepartamento"/>
+		<xsd:element name="getDepartamentoResponse" type="tns:getDepartamentoResponse"/>
+	    <xsd:element name="getGestionAdmin" type="tns:getGestionAdmin"/>
+		<xsd:element name="getGestionAdminResponse" type="tns:getGestionAdminResponse"/>
+		<xsd:element name="crearDato" type="tns:crearDato"/>
+		<xsd:element name="crearDatoResponse" type="tns:crearDatoResponse"/>	
+		<xsd:element name="modificacionDato" type="tns:modificacionDato"/>
+		<xsd:element name="modificacacionDatoResponse" type="tns:modificacionDatoResponse"/>	
+		<xsd:element name="eliminarDato" type="tns:eliminarDato"/>
+		<xsd:element name="eliminarDatoResponse" type="tns:eliminarDatoResponse"/>	
+		
+		<xsd:complexType name="Identificador">
+			<xsd:sequence>
+				<xsd:element name="_id" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<xsd:complexType name="Codigo">
+			<xsd:sequence>
+				<xsd:element name="codigo" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<xsd:complexType name="Nombre">
+			<xsd:sequence>
+				<xsd:element name="nombre" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<xsd:complexType name="NombreEspecifico">
+			<xsd:sequence>
+				<xsd:element nillable="true" name="nombreEspecifico" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<xsd:complexType name="Departamento">
+			<xsd:sequence>
+				<xsd:element name="departamento" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<xsd:complexType name="UnidadAdministrativa">
+			<xsd:sequence>
+				<xsd:element  name="uniAdmResp" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<xsd:complexType name="Ruta">
+			<xsd:sequence>
+				<xsd:element  name="ruta" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<xsd:complexType name="TipoActuacion">
+			<xsd:sequence>
+				<xsd:element  name="tipoActuacion" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<xsd:complexType name="InicioTramite">
+			<xsd:sequence>
+				<xsd:element  name="inicioTramite" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<xsd:complexType name="Ambito">
+			<xsd:sequence>
+				<xsd:element  name="ambito" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<xsd:complexType name="NivelAdministrativo">
+			<xsd:sequence>
+				<xsd:element  name="id" type="xsd:string"/>
+				<xsd:element  name="descripcion" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<xsd:complexType name="CodigoSia">
+			<xsd:sequence>
+				<xsd:element name="codigoSia" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<xsd:complexType name="FechaActSia">
+			<xsd:sequence>
+				<xsd:element name="fechaSia" type="xsd:dateTime"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<xsd:complexType name="FechaPublicacion">
+			<xsd:sequence>
+				<xsd:element name="fechaPub" type="xsd:dateTime"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<xsd:complexType name="LastModification">
+			<xsd:sequence>
+				<xsd:element  name="lastMod" type="xsd:dateTime"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<xsd:complexType name="FechaInicio">
+			<xsd:sequence>
+				<xsd:element name="fechaInic" nillable="true" type="xsd:dateTime"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<xsd:complexType name="FechaFin">
+			<xsd:sequence>
+				<xsd:element name="fechaFin" nillable="true" type="xsd:dateTime"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<xsd:complexType name="Observaciones">
+			<xsd:sequence>
+				<xsd:element name="obsv" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<xsd:complexType name="Familia">
+			<xsd:sequence>
+				<xsd:element name="familia" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<xsd:complexType name="TipoProcedimiento">
+			<xsd:sequence>
+				<xsd:element name="tipoProc" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<xsd:complexType name="ServicioProcedimiento">
+		<!-- MaxOcurrs =unbundle -->
+			<xsd:sequence>
+				<xsd:element  name="_id" type="tns:Identificador"/>
+				<xsd:element  name="codigo" type="tns:Codigo"/>
+				<xsd:element  name="nombre" type="tns:Nombre"/>
+				<xsd:element  name="nombreEspecifico" nillable="true" type="tns:NombreEspecifico"/>
+				<xsd:element  name="departamento" type="tns:Departamento"/>
+				<xsd:element  name="uniAdmResp" type="tns:UnidadAdministrativa"/>
+				<xsd:element  name="ruta" type="tns:Ruta"/>
+				<xsd:element  name="tipoActuacion" type="tns:TipoActuacion"/>
+				<xsd:element  name="inicioTramite" type="tns:InicioTramite"/>
+				<xsd:element  name="ambito" type="tns:Ambito"/>
+				<xsd:element  name="nivelAdministrativo" type="tns:NivelAdministrativo"/>
+				<xsd:element  name="codigoSia" type="tns:Codigo_sia"/>
+				<xsd:element  name="fechaActualizacion_sia" type="tns:FechaActSia"/>
+				<xsd:element  name="fechaPublicacion" type="tns:FechaPublicacion"/>
+				<xsd:element  name="lastModification_date" type="tns:LastModification"/>
+				<xsd:element  name="fechaInicio" type="tns:FechaInicio"/>
+				<xsd:element  name="fechaFin" type="tns:FechaFin"/>
+				<xsd:element  name="observacionesPlazo" type="tns:Observaciones"/>
+				<xsd:element  name="familia" type="tns:Familia"/>
+				<xsd:element  name="tipoProcedimiento" type="tns:TipoProcedimiento"/>
+				
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<!-- Para la unidad administrativa -->		
+			
+		<xsd:complexType name="getUnidAdmin">
+			<xsd:sequence>
+				<xsd:element maxOccurs="unbounded"  name="UnidadAdministrativa" type="tns:UnidadAdministrativa"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<xsd:complexType name="getUnidAdminResponse">
+			<xsd:sequence>
+				<xsd:element maxOccurs="unbounded"  name="Unidad_administrativa" type="tns:ServicioProcedimiento"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+	    <!-- Para el departamento -->	
+	    
+	    <xsd:complexType name="getDepartamento">
+			<xsd:sequence>
+				<xsd:element maxOccurs="unbounded"  name="Departamento" type="tns:Departamento"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<xsd:complexType name="getDepartamentoResponse">
+			<xsd:sequence>
+				<xsd:element maxOccurs="unbounded"  name="Departamento" type="tns:ServicioProcedimiento"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+	    <!-- Para el nivel administrativo -->	
+	    
+		<xsd:complexType name="getGestionAdmin">
+			<xsd:sequence>
+				<xsd:element maxOccurs="unbounded"  name="Gestion" type="tns:NivelAdministrativo"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<xsd:complexType name="getGestionAdminResponse">
+			<xsd:sequence>
+				<xsd:element maxOccurs="unbounded"  name="Gestion" type="tns:ServicioProcedimiento"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<!-- Creación de usuario -->
+		
+		<xsd:complexType name="crearDato">
+			<xsd:sequence>
+				<xsd:element name="crearDato" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<xsd:complexType name="crearDatoResponse">
+			<xsd:sequence>
+				<xsd:element name="crearDato" type="tns:ServicioProcedimiento"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<!-- Modificación procedimiento o servicio -->	
+		
+		<xsd:complexType name="modificacionDato">
+			<xsd:sequence>
+				<xsd:element name="modificacionDato" type="tns:Identificador"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<xsd:complexType name="modificacionDatoResponse">
+			<xsd:sequence>
+				<xsd:element name="modificacionDato" type="tns:ServicioProcedimiento"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<!-- Elimininación procedimiento o servicio -->	
+		
+		<xsd:complexType name="eliminarDato">
+			<xsd:sequence>
+				<xsd:element name="eliminarDato" type="tns:Identificador"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+		<xsd:complexType name="eliminarDatoResponse">
+			<xsd:sequence>
+				<xsd:element name="eliminarDato" type="tns:ServicioProcedimiento"/>
+			</xsd:sequence>
+		</xsd:complexType>
+		
+    </xsd:schema>
+  </wsdl:types>
+  
+  
+  <!-- En los message se definen los metodos de consulta -->
+  
+  <wsdl:message name="getUnidAdmin">
+    <wsdl:part element="tns:getUnidAdmin" name="parameters"/>
+  </wsdl:message>
+  
+  <wsdl:message name="getUnidAdminResponse">
+    <wsdl:part element="tns:getUnidAdminResponse" name="parameters"/>
+  </wsdl:message>
+  
+  <wsdl:message name="getDepartamento">
+    <wsdl:part element="tns:getDepartamento" name="parameters"/>
+  </wsdl:message>
+  
+  <wsdl:message name="getDepartamentoResponse">
+    <wsdl:part element="tns:getDepartamentoResponse" name="parameters"/>
+  </wsdl:message>
+  
+  <wsdl:message name="getGestionAdmin">
+    <wsdl:part element="tns:getGestionAdmin" name="parameters"/>
+  </wsdl:message>
+  
+  <wsdl:message name="getGestionAdminResponse">
+    <wsdl:part element="tns:getGestionAdmin" name="parameters"/>
+  </wsdl:message>
+  
+  <wsdl:message name="crearDato">
+    <wsdl:part element="tns:crearDato" name="parameters"/>
+  </wsdl:message>
+  
+  <wsdl:message name="crearDatoResponse">
+    <wsdl:part name="parameters" element="tns:crearDatoResponse" />
+  </wsdl:message>
+  
+  <wsdl:message name="modificacionDato">
+    <wsdl:part element="tns:modificacionDato" name="parameters"/>
+  </wsdl:message>
+  
+  <wsdl:message name="modificacionDatoResponse">
+    <wsdl:part element="tns:modificacacionDatoResponse" name="parameters"/>
+  </wsdl:message>
+  
+  <wsdl:message name="eliminarDato">
+    <wsdl:part element="tns:eliminarDato" name="parameters"/>
+  </wsdl:message>
+  
+  <wsdl:message name="eliminarDatoResponse">
+    <wsdl:part element="tns:eliminarDato" name="parameters"/>
+  </wsdl:message>
+  
+  <!-- Cómo se llama al metodo (entrada y salida) --> 
+  
+  <wsdl:portType name="PlatinoWebServicePortType">
+  
+    <wsdl:operation name="getUnidAdmin">
+      <wsdl:input name="getUnidAdmin" message="tns:getUnidAdmin"/>
+      <wsdl:output name="getUnidAdminResponse" message="tns:getUnidAdminResponse"/>
+    </wsdl:operation>
+    
+    <wsdl:operation name="getDepartamento">
+      <wsdl:input name="getDepartamentomessage" message="tns:getDepartamento"/>
+      <wsdl:output name= "getDepartamentoResponse" message="tns:getDepartamentoResponse"/>
+    </wsdl:operation>
+    
+    <wsdl:operation name="getGestion">
+      <wsdl:input name="getGestionAdmin" message="tns:getGestionAdmin"/>
+      <wsdl:output name= "getGestionAdminResponse" message="tns:getGestionAdminResponse"/>
+    </wsdl:operation>
+    
+    <wsdl:operation name="crearDato">
+      <wsdl:input name="crearDato" message="tns:crearDato"/>
+      <wsdl:output name= "crearDatoResponse" message="tns:crearDatoResponse"/>
+    </wsdl:operation>
+    
+    <wsdl:operation name="modificarDato">
+      <wsdl:input name="modificarDato" message="tns:modificacionDato"/>
+      <wsdl:output name= "modificarDatoResponse" message="tns:modificacionDatoResponse"/>
+    </wsdl:operation>
+    
+    <wsdl:operation name="eliminarDato">
+      <wsdl:input name="eliminarDato" message="tns:eliminarDato"/>
+      <wsdl:output name= "eliminarDatoResponse" message="tns:eliminarDatoResponse"/>
+    </wsdl:operation>
+      
+  <!-- Editar aquí -->
+  </wsdl:portType>
+  
+  <wsdl:binding name="PlatinoWebServiceSoapBinding" type="tns:PlatinoWebServicePortType">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    
+    <wsdl:operation name="getUnidAdmin">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="getUnidAdmin">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getUnidAdminResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    
+    <wsdl:operation name="getDepartamento">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getDepartamento">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getDepartamentoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    
+    <wsdl:operation name="getGestionAdmin">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="getGestionAdmin">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="getGestionAdminResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    
+    <wsdl:operation name="crearDato">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="crearDato">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="crearDatoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    
+    <wsdl:operation name="modificarDato">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="modificarDato">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="modificarDatoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    
+    <wsdl:operation name="eliminarDato">
+      <soap:operation soapAction=""/>
+      <wsdl:input name="eliminarDato">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="eliminarDatoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  
+  <wsdl:service name="platinoContract">
+    <wsdl:port binding="tns:PlatinoWebServiceSoapBinding" name="PlatinoWebServicePort">
+      <soap:address location="http://localhost:9101/platino"/>
+    </wsdl:port>
+  </wsdl:service>
+  
+</wsdl:definitions>

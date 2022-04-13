@@ -1,0 +1,31 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <parent>
+    <groupId>com.mycompany.servicios</groupId>
+    <artifactId>platino</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+  </parent>
+  <artifactId>platino-entrypoint</artifactId>
+  <packaging>bundle</packaging>
+  
+  <dependencies>
+  	<dependency>
+  	<!-- Dependencia al contract, ya que el wsdl esta ahí-->
+  		<groupId>com.mycompany.servicios</groupId>
+  		<artifactId>platino-contract</artifactId>
+  		<version>${project.version}</version>
+  	</dependency>
+  </dependencies>
+  <build>
+  	<defaultGoal>install</defaultGoal>	
+  </build>
+  <dependencyManagement>
+  	<dependencies>
+  		<dependency>
+  			<groupId>org.apache.cxf</groupId>
+  			<artifactId>cxf-codegen-plugin</artifactId>
+  			<version>${cxf.version}</version>
+  		</dependency>
+  	</dependencies>
+  </dependencyManagement>
+</project>
