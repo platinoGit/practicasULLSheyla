@@ -319,7 +319,7 @@
       <wsdl:output name= "getDepartamentoResponse" message="tns:getDepartamentoResponse"/>
     </wsdl:operation>
     
-    <wsdl:operation name="getGestion">
+    <wsdl:operation name="getGestionAdmin">
       <wsdl:input name="getGestionAdmin" message="tns:getGestionAdmin"/>
       <wsdl:output name= "getGestionAdminResponse" message="tns:getGestionAdminResponse"/>
     </wsdl:operation>
