@@ -4,255 +4,254 @@
 <!-- Notas: verificar el tipo de dato que devuelvo (en los metodos esta mal).p.ejm pasar el id a los metodos como parametros--> 
 
   <wsdl:types>
-    <xsd:schema xmlns:tns="http://datos.abiertos.es/platino" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://datos.abiertos.es/platino" version="1.0"> 
-	<xsd:import namespace="http://www.w3.org/2005/05/xmlmime"/>
+    <xs:schema xmlns:tns="http://datos.abiertos.es/platino" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://datos.abiertos.es/platino" version="1.0"> 
 	
-		<xsd:element name="getUnidAdmin" type="tns:getUnidAdmin"/>	
-		<xsd:element name="getUnidAdminResponse" type="tns:getUnidAdminResponse"/>
-		<xsd:element name="getDepartamento" type="tns:getDepartamento"/>
-		<xsd:element name="getDepartamentoResponse" type="tns:getDepartamentoResponse"/>
-	    <xsd:element name="getGestionAdmin" type="tns:getGestionAdmin"/>
-		<xsd:element name="getGestionAdminResponse" type="tns:getGestionAdminResponse"/>
-		<xsd:element name="crearDato" type="tns:crearDato"/>
-		<xsd:element name="crearDatoResponse" type="tns:crearDatoResponse"/>	
-		<xsd:element name="modificacionDato" type="tns:modificacionDato"/>
-		<xsd:element name="modificacacionDatoResponse" type="tns:modificacionDatoResponse"/>	
-		<xsd:element name="eliminarDato" type="tns:eliminarDato"/>
-		<xsd:element name="eliminarDatoResponse" type="tns:eliminarDatoResponse"/>	
+		<xs:element name="getUnidAdmin" type="tns:getUnidAdmin"/>	
+		<xs:element name="getUnidAdminResponse" type="tns:getUnidAdminResponse"/>
+		<xs:element name="getDepartamento" type="tns:getDepartamento"/>
+		<xs:element name="getDepartamentoResponse" type="tns:getDepartamentoResponse"/>
+	    <xs:element name="getGestionAdmin" type="tns:getGestionAdmin"/>
+		<xs:element name="getGestionAdminResponse" type="tns:getGestionAdminResponse"/>
+		<xs:element name="crearDato" type="tns:crearDato"/>
+		<xs:element name="crearDatoResponse" type="tns:crearDatoResponse"/>	
+		<xs:element name="modificacionDato" type="tns:modificacionDato"/>
+		<xs:element name="modificacacionDatoResponse" type="tns:modificacionDatoResponse"/>	
+		<xs:element name="eliminarDato" type="tns:eliminarDato"/>
+		<xs:element name="eliminarDatoResponse" type="tns:eliminarDatoResponse"/>	
 		
-		<xsd:complexType name="Identificador">
-			<xsd:sequence>
-				<xsd:element name="_id" type="xsd:string"/>
-			</xsd:sequence>
-		</xsd:complexType>
+		<xs:complexType name="Identificador">
+			<xs:sequence>
+				<xs:element name="_id" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
 		
-		<xsd:complexType name="Codigo">
-			<xsd:sequence>
-				<xsd:element name="codigo" type="xsd:string"/>
-			</xsd:sequence>
-		</xsd:complexType>
+		<xs:complexType name="Codigo">
+			<xs:sequence>
+				<xs:element name="codigo" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
 		
-		<xsd:complexType name="Nombre">
-			<xsd:sequence>
-				<xsd:element name="nombre" type="xsd:string"/>
-			</xsd:sequence>
-		</xsd:complexType>
+		<xs:complexType name="Nombre">
+			<xs:sequence>
+				<xs:element name="nombre" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
 		
-		<xsd:complexType name="NombreEspecifico">
-			<xsd:sequence>
-				<xsd:element nillable="true" name="nombreEspecifico" type="xsd:string"/>
-			</xsd:sequence>
-		</xsd:complexType>
+		<xs:complexType name="NombreEspecifico">
+			<xs:sequence>
+				<xs:element nillable="true" name="nombreEspecifico" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
 		
-		<xsd:complexType name="Departamento">
-			<xsd:sequence>
-				<xsd:element name="departamento" type="xsd:string"/>
-			</xsd:sequence>
-		</xsd:complexType>
+		<xs:complexType name="Departamento">
+			<xs:sequence>
+				<xs:element name="departamento" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
 		
-		<xsd:complexType name="UnidadAdministrativa">
-			<xsd:sequence>
-				<xsd:element  name="uniAdmResp" type="xsd:string"/>
-			</xsd:sequence>
-		</xsd:complexType>
+		<xs:complexType name="UnidadAdministrativa">
+			<xs:sequence>
+				<xs:element  name="uniAdmResp" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
 		
-		<xsd:complexType name="Ruta">
-			<xsd:sequence>
-				<xsd:element  name="ruta" type="xsd:string"/>
-			</xsd:sequence>
-		</xsd:complexType>
+		<xs:complexType name="Ruta">
+			<xs:sequence>
+				<xs:element  name="ruta" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
 		
-		<xsd:complexType name="TipoActuacion">
-			<xsd:sequence>
-				<xsd:element  name="tipoActuacion" type="xsd:string"/>
-			</xsd:sequence>
-		</xsd:complexType>
+		<xs:complexType name="TipoActuacion">
+			<xs:sequence>
+				<xs:element  name="tipoActuacion" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
 		
-		<xsd:complexType name="InicioTramite">
-			<xsd:sequence>
-				<xsd:element  name="inicioTramite" type="xsd:string"/>
-			</xsd:sequence>
-		</xsd:complexType>
+		<xs:complexType name="InicioTramite">
+			<xs:sequence>
+				<xs:element  name="inicioTramite" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
 		
-		<xsd:complexType name="Ambito">
-			<xsd:sequence>
-				<xsd:element  name="ambito" type="xsd:string"/>
-			</xsd:sequence>
-		</xsd:complexType>
+		<xs:complexType name="Ambito">
+			<xs:sequence>
+				<xs:element  name="ambito" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
 		
-		<xsd:complexType name="NivelAdministrativo">
-			<xsd:sequence>
-				<xsd:element  name="id" type="xsd:string"/>
-				<xsd:element  name="descripcion" type="xsd:string"/>
-			</xsd:sequence>
-		</xsd:complexType>
+		<xs:complexType name="NivelAdministrativo">
+			<xs:sequence>
+				<xs:element  name="id" type="xs:string"/>
+				<xs:element  name="descripcion" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
 		
-		<xsd:complexType name="CodigoSia">
-			<xsd:sequence>
-				<xsd:element name="codigoSia" type="xsd:string"/>
-			</xsd:sequence>
-		</xsd:complexType>
+		<xs:complexType name="CodigoSia">
+			<xs:sequence>
+				<xs:element name="codigoSia" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
 		
-		<xsd:complexType name="FechaActSia">
-			<xsd:sequence>
-				<xsd:element name="fechaSia" type="xsd:dateTime"/>
-			</xsd:sequence>
-		</xsd:complexType>
+		<xs:complexType name="FechaActSia">
+			<xs:sequence>
+				<xs:element name="fechaSia" type="xs:dateTime"/>
+			</xs:sequence>
+		</xs:complexType>
 		
-		<xsd:complexType name="FechaPublicacion">
-			<xsd:sequence>
-				<xsd:element name="fechaPub" type="xsd:dateTime"/>
-			</xsd:sequence>
-		</xsd:complexType>
+		<xs:complexType name="FechaPublicacion">
+			<xs:sequence>
+				<xs:element name="fechaPub" type="xs:dateTime"/>
+			</xs:sequence>
+		</xs:complexType>
 		
-		<xsd:complexType name="LastModification">
-			<xsd:sequence>
-				<xsd:element  name="lastMod" type="xsd:dateTime"/>
-			</xsd:sequence>
-		</xsd:complexType>
+		<xs:complexType name="LastModification">
+			<xs:sequence>
+				<xs:element  name="lastMod" type="xs:dateTime"/>
+			</xs:sequence>
+		</xs:complexType>
 		
-		<xsd:complexType name="FechaInicio">
-			<xsd:sequence>
-				<xsd:element name="fechaInic" nillable="true" type="xsd:dateTime"/>
-			</xsd:sequence>
-		</xsd:complexType>
+		<xs:complexType name="FechaInicio">
+			<xs:sequence>
+				<xs:element name="fechaInic" nillable="true" type="xs:dateTime"/>
+			</xs:sequence>
+		</xs:complexType>
 		
-		<xsd:complexType name="FechaFin">
-			<xsd:sequence>
-				<xsd:element name="fechaFin" nillable="true" type="xsd:dateTime"/>
-			</xsd:sequence>
-		</xsd:complexType>
+		<xs:complexType name="FechaFin">
+			<xs:sequence>
+				<xs:element name="fechaFin" nillable="true" type="xs:dateTime"/>
+			</xs:sequence>
+		</xs:complexType>
 		
-		<xsd:complexType name="Observaciones">
-			<xsd:sequence>
-				<xsd:element name="obsv" type="xsd:string"/>
-			</xsd:sequence>
-		</xsd:complexType>
+		<xs:complexType name="Observaciones">
+			<xs:sequence>
+				<xs:element name="obsv" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
 		
-		<xsd:complexType name="Familia">
-			<xsd:sequence>
-				<xsd:element name="familia" type="xsd:string"/>
-			</xsd:sequence>
-		</xsd:complexType>
+		<xs:complexType name="Familia">
+			<xs:sequence>
+				<xs:element name="familia" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
 		
-		<xsd:complexType name="TipoProcedimiento">
-			<xsd:sequence>
-				<xsd:element name="tipoProc" type="xsd:string"/>
-			</xsd:sequence>
-		</xsd:complexType>
+		<xs:complexType name="TipoProcedimiento">
+			<xs:sequence>
+				<xs:element name="tipoProc" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
 		
-		<xsd:complexType name="ServicioProcedimiento">
+		<xs:complexType name="ServicioProcedimiento">
 		<!-- MaxOcurrs =unbundle -->
-			<xsd:sequence>
-				<xsd:element  name="_id" type="tns:Identificador"/>
-				<xsd:element  name="codigo" type="tns:Codigo"/>
-				<xsd:element  name="nombre" type="tns:Nombre"/>
-				<xsd:element  name="nombreEspecifico" nillable="true" type="tns:NombreEspecifico"/>
-				<xsd:element  name="departamento" type="tns:Departamento"/>
-				<xsd:element  name="uniAdmResp" type="tns:UnidadAdministrativa"/>
-				<xsd:element  name="ruta" type="tns:Ruta"/>
-				<xsd:element  name="tipoActuacion" type="tns:TipoActuacion"/>
-				<xsd:element  name="inicioTramite" type="tns:InicioTramite"/>
-				<xsd:element  name="ambito" type="tns:Ambito"/>
-				<xsd:element  name="nivelAdministrativo" type="tns:NivelAdministrativo"/>
-				<xsd:element  name="codigoSia" type="tns:Codigo_sia"/>
-				<xsd:element  name="fechaActualizacion_sia" type="tns:FechaActSia"/>
-				<xsd:element  name="fechaPublicacion" type="tns:FechaPublicacion"/>
-				<xsd:element  name="lastModification_date" type="tns:LastModification"/>
-				<xsd:element  name="fechaInicio" type="tns:FechaInicio"/>
-				<xsd:element  name="fechaFin" type="tns:FechaFin"/>
-				<xsd:element  name="observacionesPlazo" type="tns:Observaciones"/>
-				<xsd:element  name="familia" type="tns:Familia"/>
-				<xsd:element  name="tipoProcedimiento" type="tns:TipoProcedimiento"/>
+			<xs:sequence>
+				<xs:element  name="_id" type="tns:Identificador"/>
+				<xs:element  name="codigo" type="tns:Codigo"/>
+				<xs:element  name="nombre" type="tns:Nombre"/>
+				<xs:element  name="nombreEspecifico" nillable="true" type="tns:NombreEspecifico"/>
+				<xs:element  name="departamento" type="tns:Departamento"/>
+				<xs:element  name="uniAdmResp" type="tns:UnidadAdministrativa"/>
+				<xs:element  name="ruta" type="tns:Ruta"/>
+				<xs:element  name="tipoActuacion" type="tns:TipoActuacion"/>
+				<xs:element  name="inicioTramite" type="tns:InicioTramite"/>
+				<xs:element  name="ambito" type="tns:Ambito"/>
+				<xs:element  name="nivelAdministrativo" type="tns:NivelAdministrativo"/>
+				<xs:element  name="codigoSia" type="tns:Codigo_sia"/>
+				<xs:element  name="fechaActualizacion_sia" type="tns:FechaActSia"/>
+				<xs:element  name="fechaPublicacion" type="tns:FechaPublicacion"/>
+				<xs:element  name="lastModification_date" type="tns:LastModification"/>
+				<xs:element  name="fechaInicio" type="tns:FechaInicio"/>
+				<xs:element  name="fechaFin" type="tns:FechaFin"/>
+				<xs:element  name="observacionesPlazo" type="tns:Observaciones"/>
+				<xs:element  name="familia" type="tns:Familia"/>
+				<xs:element  name="tipoProcedimiento" type="tns:TipoProcedimiento"/>
 				
-			</xsd:sequence>
-		</xsd:complexType>
+			</xs:sequence>
+		</xs:complexType>
 		
 		<!-- Para la unidad administrativa -->		
 			
-		<xsd:complexType name="getUnidAdmin">
-			<xsd:sequence>
-				<xsd:element maxOccurs="unbounded"  name="UnidadAdministrativa" type="tns:UnidadAdministrativa"/>
-			</xsd:sequence>
-		</xsd:complexType>
+		<xs:complexType name="getUnidAdmin">
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded"  name="UnidadAdministrativa" type="tns:UnidadAdministrativa"/>
+			</xs:sequence>
+		</xs:complexType>
 		
-		<xsd:complexType name="getUnidAdminResponse">
-			<xsd:sequence>
-				<xsd:element maxOccurs="unbounded"  name="Unidad_administrativa" type="tns:ServicioProcedimiento"/>
-			</xsd:sequence>
-		</xsd:complexType>
+		<xs:complexType name="getUnidAdminResponse">
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded"  name="Unidad_administrativa" type="tns:ServicioProcedimiento"/>
+			</xs:sequence>
+		</xs:complexType>
 		
 	    <!-- Para el departamento -->	
 	    
-	    <xsd:complexType name="getDepartamento">
-			<xsd:sequence>
-				<xsd:element maxOccurs="unbounded"  name="Departamento" type="tns:Departamento"/>
-			</xsd:sequence>
-		</xsd:complexType>
+	    <xs:complexType name="getDepartamento">
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded"  name="Departamento" type="tns:Departamento"/>
+			</xs:sequence>
+		</xs:complexType>
 		
-		<xsd:complexType name="getDepartamentoResponse">
-			<xsd:sequence>
-				<xsd:element maxOccurs="unbounded"  name="Departamento" type="tns:ServicioProcedimiento"/>
-			</xsd:sequence>
-		</xsd:complexType>
+		<xs:complexType name="getDepartamentoResponse">
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded"  name="Departamento" type="tns:ServicioProcedimiento"/>
+			</xs:sequence>
+		</xs:complexType>
 		
 	    <!-- Para el nivel administrativo -->	
 	    
-		<xsd:complexType name="getGestionAdmin">
-			<xsd:sequence>
-				<xsd:element maxOccurs="unbounded"  name="Gestion" type="tns:NivelAdministrativo"/>
-			</xsd:sequence>
-		</xsd:complexType>
+		<xs:complexType name="getGestionAdmin">
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded"  name="Gestion" type="tns:NivelAdministrativo"/>
+			</xs:sequence>
+		</xs:complexType>
 		
-		<xsd:complexType name="getGestionAdminResponse">
-			<xsd:sequence>
-				<xsd:element maxOccurs="unbounded"  name="Gestion" type="tns:ServicioProcedimiento"/>
-			</xsd:sequence>
-		</xsd:complexType>
+		<xs:complexType name="getGestionAdminResponse">
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded"  name="Gestion" type="tns:ServicioProcedimiento"/>
+			</xs:sequence>
+		</xs:complexType>
 		
 		<!-- Creación de usuario -->
 		
-		<xsd:complexType name="crearDato">
-			<xsd:sequence>
-				<xsd:element name="crearDato" type="xsd:string"/>
-			</xsd:sequence>
-		</xsd:complexType>
+		<xs:complexType name="crearDato">
+			<xs:sequence>
+				<xs:element name="crearDato" type="xs:string"/>
+			</xs:sequence>
+		</xs:complexType>
 		
-		<xsd:complexType name="crearDatoResponse">
-			<xsd:sequence>
-				<xsd:element name="crearDato" type="tns:ServicioProcedimiento"/>
-			</xsd:sequence>
-		</xsd:complexType>
+		<xs:complexType name="crearDatoResponse">
+			<xs:sequence>
+				<xs:element name="crearDato" type="tns:ServicioProcedimiento"/>
+			</xs:sequence>
+		</xs:complexType>
 		
 		<!-- Modificación procedimiento o servicio -->	
 		
-		<xsd:complexType name="modificacionDato">
-			<xsd:sequence>
-				<xsd:element name="modificacionDato" type="tns:Identificador"/>
-			</xsd:sequence>
-		</xsd:complexType>
+		<xs:complexType name="modificacionDato">
+			<xs:sequence>
+				<xs:element name="modificacionDato" type="tns:Identificador"/>
+			</xs:sequence>
+		</xs:complexType>
 		
-		<xsd:complexType name="modificacionDatoResponse">
-			<xsd:sequence>
-				<xsd:element name="modificacionDato" type="tns:ServicioProcedimiento"/>
-			</xsd:sequence>
-		</xsd:complexType>
+		<xs:complexType name="modificacionDatoResponse">
+			<xs:sequence>
+				<xs:element name="modificacionDato" type="tns:ServicioProcedimiento"/>
+			</xs:sequence>
+		</xs:complexType>
 		
 		<!-- Elimininación procedimiento o servicio -->	
 		
-		<xsd:complexType name="eliminarDato">
-			<xsd:sequence>
-				<xsd:element name="eliminarDato" type="tns:Identificador"/>
-			</xsd:sequence>
-		</xsd:complexType>
+		<xs:complexType name="eliminarDato">
+			<xs:sequence>
+				<xs:element name="eliminarDato" type="tns:Identificador"/>
+			</xs:sequence>
+		</xs:complexType>
 		
-		<xsd:complexType name="eliminarDatoResponse">
-			<xsd:sequence>
-				<xsd:element name="eliminarDato" type="tns:ServicioProcedimiento"/>
-			</xsd:sequence>
-		</xsd:complexType>
+		<xs:complexType name="eliminarDatoResponse">
+			<xs:sequence>
+				<xs:element name="eliminarDato" type="tns:ServicioProcedimiento"/>
+			</xs:sequence>
+		</xs:complexType>
 		
-    </xsd:schema>
+    </xs:schema>
   </wsdl:types>
   
   
