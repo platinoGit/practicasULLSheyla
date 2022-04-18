@@ -21,6 +21,9 @@ En adición, se hará uso de una BBDD local, servicios SOAP y REST...
 Puesto que se está siguiendo la filosofía de la empresa, se está empleando metodología de desarrollo ágil, principalmente basada en SCRUM.
 
 ## Estructura
+
+![Image text] (https://github.com/platinoGit/practicasULLSheyla/blob/main/Estructura/Diagrama%20(2).png)
+
 ## Desarrollo del proyecto
 
 
