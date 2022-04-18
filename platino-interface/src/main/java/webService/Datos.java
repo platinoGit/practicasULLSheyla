@@ -1,5 +1,30 @@
 package webService;
 
+import javax.xml.bind.annotation.*;
+
+@XmlType(name = "Datos", propOrder = {
+		"_id",
+		"codigo",
+		"nombre",
+		"nombre_especifico",
+		"departamento",
+		"uni_adm_resp",
+		"ruta",
+		"tipo_actuacion",
+		"familia",
+		"procedimiento",
+		"inicio_tramite",
+		"ambito",
+		"nivel_administrativo",
+		"codigo_sia",
+		"fecha_actualizacion_sia",
+		"fecha_publicacion",
+		"last_modification_date",
+		"fecha_inicio",
+		"fecha_fin",
+		"observaciones_plazo"
+
+})
 public abstract class Datos {
 
 	// Tipo_actuacion: definida en las hijas. Por otro lado, tipo procedimiento y familia solo en procedimientos

@@ -71,7 +71,7 @@
   					<id>generate-wsdl</id>
   					<phase>process-classes</phase>
   					<configuration>
-  						<className>WebPlatinoInterface</className>
+  						<className>src/main/java/webService/WebPlatinoInterface</className>
   						<serviceName>platinoInterface</serviceName>
   						<outputFile>${basedir}/../platino-interface/target/wsdl/platinoInterface.wsdl</outputFile>
   						<genWsdl>true</genWsdl>
