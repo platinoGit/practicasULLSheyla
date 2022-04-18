@@ -1,5 +1,7 @@
 # Prácticas ULL-Sheyla
-    
+
+El código de este proyecto se encuentra en la rama máster.
+
 ## Objetivos
 
 El objetivo del ejercicio, consiste en desarrollar un servicio que permita la recarga periódica de datos a partir del siguiente enlace:
@@ -22,10 +24,28 @@ Puesto que se está siguiendo la filosofía de la empresa, se está empleando me
 
 ## Estructura
 
-![Image text] (https://github.com/platinoGit/practicasULLSheyla/blob/main/Estructura/Diagrama%20(2).png)
+La estructura a seguir es la siguiente:
+
+![Image text](https://github.com/platinoGit/practicasULLSheyla/blob/main/Estructura/Diagrama%20(2).png)
+
+Como se puede observar, se disponen de distintos módulos que simulan el comportamiento real de un proyecto Platino.
 
 ## Desarrollo del proyecto
 
+A continuación, se van a enumerar los pasos seguidos para la elaboración del proyecto:
+
+1) Una vez comprendida la estructura (o al menos la idea principal), el primer paso fue coger la URL para consultar los datos, y ver en POSTMAN que tipos de datos devolvía (en este caso, JSON). Tras esto, fuimos al codeready/eclipse a elaborar un código que trajera esos datos de la URL y los pasara a objetos java.
+En este caso, los códigos se encuentran en la carpeta del gateway y hemos utilizado REST.
+
+2) Después, hemos añadido unas líneas de código de dependencia en el entrypoint, para decirle que el WSDL que vamos a necesitar, se encuentra en el módulo del contract.
+
+3) Dentro del contract, a partir de un ejemplo de LEMA, vamos a desarrollar nuestro propio WSDL, de tal forma, que si funciona correctamente, se deberían generar automáticamente las clases javas correspondiente.
+
+4) Por otro lado, en el módulo interface, realizaremos el punto anterior a la inversa, es decir, a partir de clases javas, generar el WSDL y compararlo con el punto anterior (nota: esto todavía no me funciona).
+
+5) Tras haber finalizado el/los WSDL, pasamos a la capa business. Aquí, el primer paso consiste en usar SOAPUI para añadir el WSDL y realizar pruebas (i.i cosa que no veo que funcione bien).
+
+6) A continuación, fuimos al módulo business a continuar.
 
 ## Herramientas utilizadas
 
@@ -36,4 +56,10 @@ Puesto que se está siguiendo la filosofía de la empresa, se está empleando me
 - Notepad++
 
 ## Software
+
+- Fuse-karaf version 7.10.0
+- JDK versión 11.0.13
+- Apache maven versión 3.8.5
+- Apache CXF versión 3.5.2
+
 ## Links de interés
