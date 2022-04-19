@@ -45,7 +45,7 @@ En este caso, los códigos se encuentran en la carpeta del gateway y hemos utili
 
 5) Tras haber finalizado el/los WSDL, pasamos a la capa business. Aquí, el primer paso consiste en usar SOAPUI para añadir el WSDL y realizar pruebas (i.i cosa que no veo que funcione bien).
 
-6) A continuación, fuimos al módulo business a continuar.
+6) A continuación, fuimos al módulo business a continuar. Aquí empezamos con el enrutamiento, el logic y modificando el POM.
 
 ## Herramientas utilizadas
 
