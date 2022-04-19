@@ -7,4 +7,61 @@
   </parent>
   <artifactId>platino-business</artifactId>
   <packaging>bundle</packaging>
+  
+  <dependencies>
+	  <dependency>
+	  	<groupId>org.apache.camel.quarkus</groupId>
+	  	<artifactId>camel-quarkus-core</artifactId>
+	  	<version>2.7.1</version>
+	  </dependency>
+	  
+	<dependency>
+  		<groupId>org.apache.camel</groupId>
+  		<artifactId>camel-cxf</artifactId>
+  		<version>3.15.0</version>
+  	</dependency>
+  	
+  	<dependency>
+  		<groupId>org.apache.camel</groupId>
+  		<artifactId>camel-jaxb</artifactId>
+  		<version>3.15.0</version>
+  	</dependency>
+	
+	<dependency>
+		<groupId>org.apache.maven.plugins</groupId>
+		<artifactId>maven-deploy-plugin</artifactId>
+		<version>2.8.2</version>
+	</dependency>
+  </dependencies>
+  
+  <build>
+  	<pluginManagement>
+  		<plugins>
+  			<plugin>
+  				<groupId>org.apache.maven.plugins</groupId>
+  				<artifactId>maven-compiler-plugin</artifactId>
+  				<version>3.7.0</version>
+  			</plugin>
+  			
+  			<plugin>
+  				<groupId>org.apache.maven.plugins</groupId>
+  				<artifactId>maven-install-plugin</artifactId>
+  				<version>2.5.2</version>
+  			</plugin>
+  			
+  			<plugin>
+  				<groupId>org.apache.maven.plugins</groupId>
+  				<artifactId>maven-resources-plugin</artifactId>
+  				<version>3.0.2</version>
+  			</plugin>
+  			
+  			<plugin>
+  				<groupId>org.apache.felix</groupId>
+  				<artifactId>maven-bundle-plugin</artifactId>
+  				<version>3.5.1</version>
+  				<extensions>true</extensions>
+  			</plugin>
+  		</plugins>
+  	</pluginManagement>
+  </build>
 </project>
