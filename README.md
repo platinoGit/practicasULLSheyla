@@ -63,3 +63,6 @@ En este caso, los códigos se encuentran en la carpeta del gateway y hemos utili
 - Apache CXF versión 3.5.2
 
 ## Links de interés
+
+- Validador de WSDL: https://www.wsdl-analyzer.com/
+- Maven repository: https://mvnrepository.com/
