@@ -11,7 +11,6 @@ webService\Codigo.class
 webService\Ambito.class
 webService\Departamento.class
 webService\FechaInicio.class
-webService\Datos.class
 webService\NombreE.class
 webService\CodigoSIA.class
 webService\WebPlatinoInterface.class

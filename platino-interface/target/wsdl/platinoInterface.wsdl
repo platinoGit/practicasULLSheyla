@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions name="platinoInterface" targetNamespace="http://datos.abiertos.es/platino" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://datos.abiertos.es/platino" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/">
+  <wsdl:types>
+<xs:schema xmlns:tns="http://datos.abiertos.es/platino" xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="unqualified" targetNamespace="http://datos.abiertos.es/platino" version="1.0">
+
+  <xs:element name="busquedaDepartProcedimiento" type="tns:busquedaDepartProcedimiento"/>
+
+  <xs:element name="busquedaDepartProcedimientoResponse" type="tns:busquedaDepartProcedimientoResponse"/>
+
+  <xs:element name="busquedaDepartServicio" type="tns:busquedaDepartServicio"/>
+
+  <xs:element name="busquedaDepartServicioResponse" type="tns:busquedaDepartServicioResponse"/>
+
+  <xs:element name="busquedaNivelProcedimiento" type="tns:busquedaNivelProcedimiento"/>
+
+  <xs:element name="busquedaNivelProcedimientoResponse" type="tns:busquedaNivelProcedimientoResponse"/>
+
+  <xs:element name="busquedaNivelServicio" type="tns:busquedaNivelServicio"/>
+
+  <xs:element name="busquedaNivelServicioResponse" type="tns:busquedaNivelServicioResponse"/>
+
+  <xs:element name="busquedaUnidadProcedimiento" type="tns:busquedaUnidadProcedimiento"/>
+
+  <xs:element name="busquedaUnidadProcedimientoResponse" type="tns:busquedaUnidadProcedimientoResponse"/>
+
+  <xs:element name="busquedaUnidadServicio" type="tns:busquedaUnidadServicio"/>
+
+  <xs:element name="busquedaUnidadServicioResponse" type="tns:busquedaUnidadServicioResponse"/>
+
+  <xs:element name="crearDatoProcedimiento" type="tns:crearDatoProcedimiento"/>
+
+  <xs:element name="crearDatoProcedimientoResponse" type="tns:crearDatoProcedimientoResponse"/>
+
+  <xs:element name="crearDatoServicio" type="tns:crearDatoServicio"/>
+
+  <xs:element name="crearDatoServicioResponse" type="tns:crearDatoServicioResponse"/>
+
+  <xs:element name="eliminarDatoProcedimiento" type="tns:eliminarDatoProcedimiento"/>
+
+  <xs:element name="eliminarDatoProcedimientoResponse" type="tns:eliminarDatoProcedimientoResponse"/>
+
+  <xs:element name="eliminarDatoServicio" type="tns:eliminarDatoServicio"/>
+
+  <xs:element name="eliminarDatoServicioResponse" type="tns:eliminarDatoServicioResponse"/>
+
+  <xs:element name="modificarDatoProcedimiento" type="tns:modificarDatoProcedimiento"/>
+
+  <xs:element name="modificarDatoProcedimientoResponse" type="tns:modificarDatoProcedimientoResponse"/>
+
+  <xs:element name="modificarDatoServicio" type="tns:modificarDatoServicio"/>
+
+  <xs:element name="modificarDatoServicioResponse" type="tns:modificarDatoServicioResponse"/>
+
+  <xs:complexType name="busquedaNivelProcedimiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nivel_administrativo" type="tns:NivelAdmin"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="NivelAdmin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nivel_administrativo" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="busquedaNivelProcedimientoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="busquedaNivelAdminProcedimiento" type="tns:DatosProcedimientos"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DatosProcedimientos">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="identificador" type="tns:Id"/>
+      <xs:element minOccurs="0" name="codigo" type="tns:Codigo"/>
+      <xs:element minOccurs="0" name="nombre" type="tns:Nombre"/>
+      <xs:element minOccurs="0" name="nombre_especifico" type="tns:NombreE"/>
+      <xs:element minOccurs="0" name="departamento" type="tns:Departamento"/>
+      <xs:element minOccurs="0" name="uni_adm_resp" type="tns:UnidadAdmin"/>
+      <xs:element minOccurs="0" name="ruta" type="tns:Ruta"/>
+      <xs:element minOccurs="0" name="tipo_actuacion" type="tns:TipoA"/>
+      <xs:element minOccurs="0" name="tipoProcedimiento" type="tns:TipoProcedimiento"/>
+      <xs:element minOccurs="0" name="inicio_tramite" type="tns:Inicio"/>
+      <xs:element minOccurs="0" name="ambito" type="tns:Ambito"/>
+      <xs:element minOccurs="0" name="nivel_administrativo" type="tns:NivelAdmin"/>
+      <xs:element minOccurs="0" name="codigoSIA" type="tns:CodigoSIA"/>
+      <xs:element minOccurs="0" name="fecha_actualizacion_sia" type="tns:Actuacion"/>
+      <xs:element minOccurs="0" name="fecha_publicacion" type="tns:Publicacion"/>
+      <xs:element minOccurs="0" name="modification_date" type="tns:Modificacion"/>
+      <xs:element minOccurs="0" name="familia" type="tns:Familia"/>
+      <xs:element minOccurs="0" name="fecha_inicio" type="tns:FechaInicio"/>
+      <xs:element minOccurs="0" name="fecha_fin" type="tns:FechaFin"/>
+      <xs:element minOccurs="0" name="obs" type="tns:Observaciones"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Id">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="identificador" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Codigo">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigo" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Nombre">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="NombreE">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nombre_especifico" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Departamento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="departamento" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="UnidadAdmin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="uni_adm_resp" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Ruta">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ruta" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TipoA">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tipo_actuacion" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="TipoProcedimiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="tipoProcedimiento" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Inicio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="inicio_tramite" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Ambito">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ambito" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CodigoSIA">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="codigoSIA" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Actuacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fecha_actualizacion_sia" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Publicacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fecha_publicacion" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Modificacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="modification_date" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Familia">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="familia" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="FechaInicio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fecha_inicio" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="FechaFin">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="fecha_fin" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="Observaciones">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="obs" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="busquedaNivelServicio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="nivel_administrativo" type="tns:NivelAdmin"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="busquedaNivelServicioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="busquedaNivelAdminServicio" type="tns:DatosServicios"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="DatosServicios">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="identificador" type="tns:Id"/>
+      <xs:element minOccurs="0" name="codigo" type="tns:Codigo"/>
+      <xs:element minOccurs="0" name="nombre" type="tns:Nombre"/>
+      <xs:element minOccurs="0" name="nombre_especifico" type="tns:NombreE"/>
+      <xs:element minOccurs="0" name="departamento" type="tns:Departamento"/>
+      <xs:element minOccurs="0" name="uni_adm_resp" type="tns:UnidadAdmin"/>
+      <xs:element minOccurs="0" name="ruta" type="tns:Ruta"/>
+      <xs:element minOccurs="0" name="tipo_actuacion" type="tns:TipoA"/>
+      <xs:element minOccurs="0" name="inicio_tramite" type="tns:Inicio"/>
+      <xs:element minOccurs="0" name="ambito" type="tns:Ambito"/>
+      <xs:element minOccurs="0" name="nivel_administrativo" type="tns:NivelAdmin"/>
+      <xs:element minOccurs="0" name="codigoSIA" type="tns:CodigoSIA"/>
+      <xs:element minOccurs="0" name="fecha_actualizacion_sia" type="tns:Actuacion"/>
+      <xs:element minOccurs="0" name="fecha_publicacion" type="tns:Publicacion"/>
+      <xs:element minOccurs="0" name="modification_date" type="tns:Modificacion"/>
+      <xs:element minOccurs="0" name="fecha_inicio" type="tns:FechaInicio"/>
+      <xs:element minOccurs="0" name="fecha_fin" type="tns:FechaFin"/>
+      <xs:element minOccurs="0" name="obs" type="tns:Observaciones"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="crearDatoServicio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="identificador" type="tns:Id"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="crearDatoServicioResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="eliminarDatoProcedimiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="identificador" type="tns:Id"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eliminarDatoProcedimientoResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="busquedaDepartServicio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="departamento" type="tns:Departamento"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="busquedaDepartServicioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="busquedaDepartamentoServicio" type="tns:DatosServicios"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="busquedaUnidadProcedimiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="uni_adm_resp" type="tns:UnidadAdmin"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="busquedaUnidadProcedimientoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="busquedaUnidadAdminProcedimiento" type="tns:DatosProcedimientos"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="busquedaUnidadServicio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="uni_adm_resp" type="tns:UnidadAdmin"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="busquedaUnidadServicioResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="busquedaUnidadAdminServicio" type="tns:DatosServicios"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="busquedaDepartProcedimiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="departamento" type="tns:Departamento"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="busquedaDepartProcedimientoResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="busquedaDepartamentoProcedimiento" type="tns:DatosProcedimientos"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eliminarDatoServicio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="identificador" type="tns:Id"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="eliminarDatoServicioResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="modificarDatoProcedimiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="identificador" type="tns:Id"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="modificarDatoProcedimientoResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="crearDatoProcedimiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="identificador" type="tns:Id"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="crearDatoProcedimientoResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="modificarDatoServicio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="identificador" type="tns:Id"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="modificarDatoServicioResponse">
+    <xs:sequence/>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="eliminarDatoServicioResponse">
+    <wsdl:part name="parameters" element="tns:eliminarDatoServicioResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modificarDatoProcedimientoResponse">
+    <wsdl:part name="parameters" element="tns:modificarDatoProcedimientoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="eliminarDatoProcedimientoResponse">
+    <wsdl:part name="parameters" element="tns:eliminarDatoProcedimientoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="busquedaDepartProcedimientoResponse">
+    <wsdl:part name="parameters" element="tns:busquedaDepartProcedimientoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="crearDatoServicioResponse">
+    <wsdl:part name="parameters" element="tns:crearDatoServicioResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="busquedaNivelProcedimiento">
+    <wsdl:part name="parameters" element="tns:busquedaNivelProcedimiento">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="busquedaDepartServicioResponse">
+    <wsdl:part name="parameters" element="tns:busquedaDepartServicioResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="busquedaNivelServicio">
+    <wsdl:part name="parameters" element="tns:busquedaNivelServicio">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="crearDatoServicio">
+    <wsdl:part name="parameters" element="tns:crearDatoServicio">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="busquedaNivelServicioResponse">
+    <wsdl:part name="parameters" element="tns:busquedaNivelServicioResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="eliminarDatoProcedimiento">
+    <wsdl:part name="parameters" element="tns:eliminarDatoProcedimiento">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="busquedaNivelProcedimientoResponse">
+    <wsdl:part name="parameters" element="tns:busquedaNivelProcedimientoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="busquedaDepartServicio">
+    <wsdl:part name="parameters" element="tns:busquedaDepartServicio">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="busquedaUnidadProcedimiento">
+    <wsdl:part name="parameters" element="tns:busquedaUnidadProcedimiento">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="busquedaUnidadServicio">
+    <wsdl:part name="parameters" element="tns:busquedaUnidadServicio">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="busquedaUnidadServicioResponse">
+    <wsdl:part name="parameters" element="tns:busquedaUnidadServicioResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="busquedaDepartProcedimiento">
+    <wsdl:part name="parameters" element="tns:busquedaDepartProcedimiento">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="eliminarDatoServicio">
+    <wsdl:part name="parameters" element="tns:eliminarDatoServicio">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modificarDatoProcedimiento">
+    <wsdl:part name="parameters" element="tns:modificarDatoProcedimiento">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="busquedaUnidadProcedimientoResponse">
+    <wsdl:part name="parameters" element="tns:busquedaUnidadProcedimientoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="crearDatoProcedimiento">
+    <wsdl:part name="parameters" element="tns:crearDatoProcedimiento">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="crearDatoProcedimientoResponse">
+    <wsdl:part name="parameters" element="tns:crearDatoProcedimientoResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modificarDatoServicioResponse">
+    <wsdl:part name="parameters" element="tns:modificarDatoServicioResponse">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="modificarDatoServicio">
+    <wsdl:part name="parameters" element="tns:modificarDatoServicio">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="platinoInterface">
+    <wsdl:operation name="busquedaNivelProcedimiento">
+      <wsdl:input name="busquedaNivelProcedimiento" message="tns:busquedaNivelProcedimiento">
+    </wsdl:input>
+      <wsdl:output name="busquedaNivelProcedimientoResponse" message="tns:busquedaNivelProcedimientoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="busquedaNivelServicio">
+      <wsdl:input name="busquedaNivelServicio" message="tns:busquedaNivelServicio">
+    </wsdl:input>
+      <wsdl:output name="busquedaNivelServicioResponse" message="tns:busquedaNivelServicioResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crearDatoServicio">
+      <wsdl:input name="crearDatoServicio" message="tns:crearDatoServicio">
+    </wsdl:input>
+      <wsdl:output name="crearDatoServicioResponse" message="tns:crearDatoServicioResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarDatoProcedimiento">
+      <wsdl:input name="eliminarDatoProcedimiento" message="tns:eliminarDatoProcedimiento">
+    </wsdl:input>
+      <wsdl:output name="eliminarDatoProcedimientoResponse" message="tns:eliminarDatoProcedimientoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="busquedaDepartServicio">
+      <wsdl:input name="busquedaDepartServicio" message="tns:busquedaDepartServicio">
+    </wsdl:input>
+      <wsdl:output name="busquedaDepartServicioResponse" message="tns:busquedaDepartServicioResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="busquedaUnidadProcedimiento">
+      <wsdl:input name="busquedaUnidadProcedimiento" message="tns:busquedaUnidadProcedimiento">
+    </wsdl:input>
+      <wsdl:output name="busquedaUnidadProcedimientoResponse" message="tns:busquedaUnidadProcedimientoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="busquedaUnidadServicio">
+      <wsdl:input name="busquedaUnidadServicio" message="tns:busquedaUnidadServicio">
+    </wsdl:input>
+      <wsdl:output name="busquedaUnidadServicioResponse" message="tns:busquedaUnidadServicioResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="busquedaDepartProcedimiento">
+      <wsdl:input name="busquedaDepartProcedimiento" message="tns:busquedaDepartProcedimiento">
+    </wsdl:input>
+      <wsdl:output name="busquedaDepartProcedimientoResponse" message="tns:busquedaDepartProcedimientoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarDatoServicio">
+      <wsdl:input name="eliminarDatoServicio" message="tns:eliminarDatoServicio">
+    </wsdl:input>
+      <wsdl:output name="eliminarDatoServicioResponse" message="tns:eliminarDatoServicioResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modificarDatoProcedimiento">
+      <wsdl:input name="modificarDatoProcedimiento" message="tns:modificarDatoProcedimiento">
+    </wsdl:input>
+      <wsdl:output name="modificarDatoProcedimientoResponse" message="tns:modificarDatoProcedimientoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crearDatoProcedimiento">
+      <wsdl:input name="crearDatoProcedimiento" message="tns:crearDatoProcedimiento">
+    </wsdl:input>
+      <wsdl:output name="crearDatoProcedimientoResponse" message="tns:crearDatoProcedimientoResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modificarDatoServicio">
+      <wsdl:input name="modificarDatoServicio" message="tns:modificarDatoServicio">
+    </wsdl:input>
+      <wsdl:output name="modificarDatoServicioResponse" message="tns:modificarDatoServicioResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="platinoInterfaceSoapBinding" type="tns:platinoInterface">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="busquedaNivelProcedimiento">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="busquedaNivelProcedimiento">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="busquedaNivelProcedimientoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="busquedaNivelServicio">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="busquedaNivelServicio">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="busquedaNivelServicioResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crearDatoServicio">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="crearDatoServicio">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="crearDatoServicioResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarDatoProcedimiento">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="eliminarDatoProcedimiento">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="eliminarDatoProcedimientoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="busquedaDepartServicio">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="busquedaDepartServicio">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="busquedaDepartServicioResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="busquedaUnidadProcedimiento">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="busquedaUnidadProcedimiento">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="busquedaUnidadProcedimientoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="busquedaUnidadServicio">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="busquedaUnidadServicio">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="busquedaUnidadServicioResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="busquedaDepartProcedimiento">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="busquedaDepartProcedimiento">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="busquedaDepartProcedimientoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="eliminarDatoServicio">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="eliminarDatoServicio">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="eliminarDatoServicioResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modificarDatoProcedimiento">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="modificarDatoProcedimiento">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="modificarDatoProcedimientoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="crearDatoProcedimiento">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="crearDatoProcedimiento">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="crearDatoProcedimientoResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="modificarDatoServicio">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="modificarDatoServicio">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="modificarDatoServicioResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="platinoInterface">
+    <wsdl:port name="PlatinoWebServicePortType" binding="tns:platinoInterfaceSoapBinding">
+      <soap:address location="http://localhost:9090/PlatinoWebServicePortType"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

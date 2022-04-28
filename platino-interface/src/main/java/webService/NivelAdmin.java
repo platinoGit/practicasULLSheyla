@@ -1,5 +1,14 @@
 package webService;
 
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "NivelAdmin", propOrder = {
+		"nivel_administrativo"
+})
+
 public class NivelAdmin {
 
 	protected String nivel_administrativo;

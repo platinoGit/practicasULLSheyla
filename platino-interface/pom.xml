@@ -25,6 +25,20 @@
   		<artifactId>camel-jaxb</artifactId>
   		<version>3.16.0</version>
   	</dependency>
+  	
+  	<dependency>
+  		<groupId>org.apache.camel</groupId>
+  		<artifactId>camel-cxf</artifactId>
+  		<version>3.15.0</version>
+  		<scope>provided</scope>
+  	</dependency>
+  	
+  	<dependency>
+  		<groupId>org.hibernate</groupId>
+  		<artifactId>hibernate-core</artifactId>
+  		<version>5.6.7.Final</version>
+  	</dependency>
+  	
   </dependencies>
   
   <build>
@@ -35,6 +49,37 @@
   				<artifactId>maven-compiler-plugin</artifactId>
   				<version>3.7.0</version>
   			</plugin>
+  			
+  			<plugin>
+  				<groupId>org.apache.maven.plugins</groupId>
+  				<artifactId>maven-deploy-plugin</artifactId>
+  				<version>2.8.2</version>
+  			</plugin>
+  			
+  			<plugin>
+  				<groupId>org.apache.maven.plugins</groupId>
+  				<artifactId>maven-install-plugin</artifactId>
+  				<version>2.5.2</version>
+  			</plugin>
+  			
+  			<plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-resources-plugin</artifactId>
+                  <version>3.0.2</version>
+              </plugin>
+              
+              <plugin>
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-surefire-plugin</artifactId>
+                  <version>2.22.2</version>
+              </plugin>
+              
+              <plugin>
+                  <groupId>org.apache.felix</groupId>
+                  <artifactId>maven-bundle-plugin</artifactId>
+                  <version>3.5.1</version>
+                  <extensions>true</extensions>
+              </plugin>
   		</plugins>
   	</pluginManagement>
   	<plugins>
@@ -65,13 +110,12 @@
   					<version>3.4.6</version>
   				</dependency>
   			</dependencies>
-  			
   			<executions>
   				<execution>
   					<id>generate-wsdl</id>
   					<phase>process-classes</phase>
   					<configuration>
-  						<className>src/main/java/webService/WebPlatinoInterface</className>
+  						<className>webService.WebPlatinoInterface</className>
   						<serviceName>platinoInterface</serviceName>
   						<outputFile>${basedir}/../platino-interface/target/wsdl/platinoInterface.wsdl</outputFile>
   						<genWsdl>true</genWsdl>

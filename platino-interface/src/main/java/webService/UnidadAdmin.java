@@ -1,5 +1,14 @@
 package webService;
 
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "UnidadAdmin", propOrder = {
+		"uni_adm_resp"
+})
+
 public class UnidadAdmin {
 
 	protected String uni_adm_resp;

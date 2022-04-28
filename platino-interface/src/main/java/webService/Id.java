@@ -1,21 +1,30 @@
 package webService;
 
+import javax.xml.bind.annotation.XmlAccessorType;
+import javax.xml.bind.annotation.XmlAccessType;
+import javax.xml.bind.annotation.XmlType;
+
+@XmlAccessorType(XmlAccessType.FIELD)
+@XmlType(name = "Id", propOrder = {
+		"identificador"
+})
+
 public class Id {
 
-	protected String _id;
+	protected String identificador;
 
 	/**
-	 * @return the _id
+	 * @return the identificador
 	 */
-	public String get_id() {
-		return _id;
+	public String getIdentificador() {
+		return identificador;
 	}
 
 	/**
-	 * @param _id the _id to set
+	 * @param identificador the identificador to set
 	 */
-	public void set_id(String _id) {
-		this._id = _id;
+	public void setIdentificador(String identificador) {
+		this.identificador = identificador;
 	}
 
 }

@@ -10,9 +10,22 @@
   
   <dependencies>
 	  <dependency>
+	  <!-- Dependencia a contract porque ahí están las clases, y recordar que debo cerrar el otro módulo para que funcione -->
+	  	<groupId>com.mycompany.servicios</groupId>
+	  	<artifactId>platino-interface</artifactId>
+	  	<version>${project.version}</version>
+	  </dependency>
+	  
+  	  <dependency>
 	  	<groupId>org.apache.camel.quarkus</groupId>
 	  	<artifactId>camel-quarkus-core</artifactId>
 	  	<version>2.7.1</version>
+	  </dependency>
+	  
+	  <dependency>
+	  	<groupId>org.mapstruct</groupId>
+	  	<artifactId>mapstruct</artifactId>
+	  	<version>1.4.2.Final</version>
 	  </dependency>
 	  
 	<dependency>
