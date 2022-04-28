@@ -26,7 +26,7 @@ public class Controlador {
 	public void crearProcedimiento(Id identificador, Exchange exchange) {
 		// TODO Auto-generated method stub
 		ProcedimientoEntity proc = Mappers.getMapper(Mapper.class).prueba(identificador);
-		dao.crear(proc);
+		dao.crear(proc); // Sí debería crear aquí también metodos separados para servicios o procedimientos
 	}
 	
 	@Transactional
