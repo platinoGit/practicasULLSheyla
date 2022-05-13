@@ -45,9 +45,22 @@ En este caso, los códigos se encuentran en la carpeta del gateway y hemos utili
 
 5) Tras haber finalizado el/los WSDL, pasamos a la capa business. Aquí, el primer paso consiste en usar SOAPUI para añadir el WSDL y realizar pruebas.
 
-6) A continuación, fuimos al módulo business a continuar. Aquí empezamos con el enrutamiento, el logic y modificando el POM.
+6) A continuación, fuimos al módulo business a continuar. Dentro de este módulo, se crearon distintos paquetes de trabajo:
 
-7) El siguiente paso es añadir los paquetes DAO.
+- Controller: Vincula la lógica del sistema con los Dao.
+- Logic: Dispone la lógica del sistema.
+- Mappers: Se encarga de crear unas transformaciones de datos.
+- Dao: Inicialmente, en los dao's se planteó la siguiente estructura:
+
+![Image text](https://github.com/platinoGit/practicasULLSheyla/blob/main/Estructura/EstructurasDao.PNG)
+
+Como se puede observar, se tratan de diversas interfaces, donde se tiene una padre con los métodos generales, y a continuación, subinterfaces con métodos más específicos. Pero finalmente, las subinterfaces se implementaron como servicio o procedimiento.
+
+- Implementación de los Dao: A través del punto anterior, se implementa los códigos necesarios para los métodos declarados en los Dao.
+- Entity: Dispone las entidades existentes a las que hará referencia la BBDD.
+- Routes: Dispone el fichero de enrutamiento de Camel.
+
+7) Módulo del DataSource.
 
 ## Herramientas utilizadas
 
