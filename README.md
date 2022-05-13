@@ -65,6 +65,7 @@ Como se puede observar, se tratan de diversas interfaces, donde se tiene una pad
 ## Mejoras por implementar
 
 - En los ficheros de entidades, comprobar qué parámetros pueden necesitar de cardinalidades, puesto que p.ejm: una unidad administrativa responsable puede tener asociado 1..n procedimientos.
+- Establecer una tabla maestro para su uso posterior en la BBDD.
 
 ## Herramientas utilizadas
 
