@@ -62,6 +62,10 @@ Como se puede observar, se tratan de diversas interfaces, donde se tiene una pad
 
 7) Módulo del DataSource.
 
+## Mejoras por implementar
+
+- En los ficheros de entidades, comprobar qué parámetros pueden necesitar de cardinalidades, puesto que p.ejm: una unidad administrativa responsable puede tener asociado 1..n procedimientos.
+
 ## Herramientas utilizadas
 
 - Postman
