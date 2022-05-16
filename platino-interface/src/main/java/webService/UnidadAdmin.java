@@ -1,31 +1,27 @@
 package webService;
 
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlType;
+public enum UnidadAdmin {
 
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "UnidadAdmin", propOrder = {
-		"uni_adm_resp"
-})
+	OPCION1("Conserjería de Administraciones Públicas, Justicia y Seguridad"),
+	OPCION2("Conserjería de Agricultura, Ganadería y Pesca"),
+	OPCION3("Conserjería de Derechos Sociales, Igualdad, Diversidad y Juventud"),
+	OPCION4("Conserjería de Economía, Conocimiento y Empleo"),
+	OPCION5("Conserjería de Educación, Universidades, Cultura y Deportes"),
+	OPCION6("Conserjería de Hacienda, Presupuestos y Asuntos Europeos"),
+	OPCION7("Conserjería de Obras Públicas, Transportes y Vivienda"),
+	OPCION8("Conserjería de Sanidad"),
+	OPCION9("Conserjería de Transición Ecológica, Lucha contra el Cambio Climático y Planificación Territorial"),
+	OPCION10("Conserjería de Turismo, Industria y Comercio"),
+	OPCION11("Presidencia del Gobierno");
 
-public class UnidadAdmin {
-
-	protected String uni_adm_resp;
-
-	/**
-	 * @return the uni_adm_resp
-	 */
-	public String getUni_adm_resp() {
-		return uni_adm_resp;
-	}
-
-	/**
-	 * @param uni_adm_resp the uni_adm_resp to set
-	 */
-	public void setUni_adm_resp(String uni_adm_resp) {
-		this.uni_adm_resp = uni_adm_resp;
-	}
+	public String unidadAdmin;
+	
+	// Aquí no deja ser público
+	private UnidadAdmin(String unidadAdmin) {
+		this.unidadAdmin = unidadAdmin;
+	} 
 
 
+	
+	
 }

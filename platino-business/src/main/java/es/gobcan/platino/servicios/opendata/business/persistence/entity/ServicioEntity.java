@@ -13,6 +13,7 @@ import webService.CodigoSIA;
 import webService.Departamento;
 import webService.FechaFin;
 import webService.FechaInicio;
+import webService.Id;
 import webService.Inicio;
 import webService.Modificacion;
 import webService.NivelAdmin;
@@ -31,11 +32,9 @@ public class ServicioEntity extends Entidad implements Serializable {
 	
 	/*Serial version que el eclipse me da por defecto*/
 	private static final long serialVersionUID = 1L;
-
-	//Si el id está en identidad, entiendo que aquí no hace falta(?)
 	
-	/*@Column(nullable = false, name = "identificador")
-	private Id identificador;*/
+	@Column(nullable = false, name = "identificador")
+	private Id id;
 	
 	//Es recomendable especificar la cardinalidad? (y tema de claves, join...)
 	@Column(nullable = false, name = "codigo")
@@ -224,6 +223,15 @@ public class ServicioEntity extends Entidad implements Serializable {
 	public void setObs(Observaciones obs) {
 		this.obs = obs;
 	}
+
+	public Id getId() {
+		return id;
+	}
+
+	public void setId(Id id) {
+		this.id = id;
+	}
+
 
 
 }

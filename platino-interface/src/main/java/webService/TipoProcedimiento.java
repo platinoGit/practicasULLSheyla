@@ -1,29 +1,15 @@
 package webService;
 
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlType;
+public enum TipoProcedimiento {
 
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "TipoProcedimiento", propOrder = {
-		"tipoProcedimiento"
-})
+	OPCION1("COMUNICACION_PREVIA_DECLARACION_RESPONSABLE"),
+	OPCION2("OTRO_PROCEDIMIENTO"),
+	OPCION3("SUBVENCIONES_PREMIOS_BECAS");
 
-public class TipoProcedimiento {
-
-	String tipoProcedimiento;
-
-	/**
-	 * @return the tipo
-	 */
-	public String getTipoProcedimiento() {
-		return tipoProcedimiento;
-	}
-
-	/**
-	 * @param tipo the tipo to set
-	 */
-	public void setTipoProcedimiento(String tipoProcedimiento) {
-		this.tipoProcedimiento = tipoProcedimiento;
-	}
+	public String tipo;
+	
+	// Aquí no deja ser público
+	private TipoProcedimiento(String tipo) {
+		this.tipo = tipo;
+	} 
 }

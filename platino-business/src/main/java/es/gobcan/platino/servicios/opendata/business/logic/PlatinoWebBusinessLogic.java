@@ -52,23 +52,23 @@ public class PlatinoWebBusinessLogic {
 	
 	
 	// Método que crea el nuevo procedimiento o servicio
-	public void crearServicio(Id identificador, Exchange exchange) throws Exception {
+	public void crearServicio(DatosServicios identificador, Exchange exchange) throws Exception {
 		
 		servlogic.crearServicio(identificador, exchange);
 	}
 	
-	public void crearProcedimiento(Id identificador, Exchange exchange) throws Exception {
+	public void crearProcedimiento(DatosProcedimientos identificador, Exchange exchange) throws Exception {
 		
 		proclogic.crearProcedimiento(identificador, exchange);
 	}
 	
 	// Método que modificar el procedimiento o servicio
-	public void modificarServicio(Id identificador, Exchange exchange) throws Exception {
+	public void modificarServicio(DatosServicios identificador, Exchange exchange) throws Exception {
 		
 		servlogic.modificarServicio(identificador, exchange);
 	}
 	
-	public void modificarProcedimiento(Id identificador, Exchange exchange) throws Exception {
+	public void modificarProcedimiento(DatosProcedimientos identificador, Exchange exchange) throws Exception {
 		
 		proclogic.modificarProcedimiento(identificador, exchange);
 	}

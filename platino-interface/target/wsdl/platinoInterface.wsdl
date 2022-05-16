@@ -53,13 +53,7 @@
 
   <xs:complexType name="busquedaNivelProcedimiento">
     <xs:sequence>
-      <xs:element minOccurs="0" name="nivel_administrativo" type="tns:NivelAdmin"/>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="NivelAdmin">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="nivel_administrativo" type="xs:string"/>
+      <xs:element minOccurs="0" name="nivel_administrativo" type="tns:nivelAdmin"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -75,14 +69,14 @@
       <xs:element minOccurs="0" name="codigo" type="tns:Codigo"/>
       <xs:element minOccurs="0" name="nombre" type="tns:Nombre"/>
       <xs:element minOccurs="0" name="nombre_especifico" type="tns:NombreE"/>
-      <xs:element minOccurs="0" name="departamento" type="tns:Departamento"/>
-      <xs:element minOccurs="0" name="uni_adm_resp" type="tns:UnidadAdmin"/>
+      <xs:element minOccurs="0" name="departamento" type="tns:departamento"/>
+      <xs:element minOccurs="0" name="uni_adm_resp" type="tns:unidadAdmin"/>
       <xs:element minOccurs="0" name="ruta" type="tns:Ruta"/>
-      <xs:element minOccurs="0" name="tipo_actuacion" type="tns:TipoA"/>
-      <xs:element minOccurs="0" name="tipoProcedimiento" type="tns:TipoProcedimiento"/>
+      <xs:element minOccurs="0" name="tipo_actuacion" type="tns:tipoA"/>
+      <xs:element minOccurs="0" name="tipoProcedimiento" type="tns:tipoProcedimiento"/>
       <xs:element minOccurs="0" name="inicio_tramite" type="tns:Inicio"/>
       <xs:element minOccurs="0" name="ambito" type="tns:Ambito"/>
-      <xs:element minOccurs="0" name="nivel_administrativo" type="tns:NivelAdmin"/>
+      <xs:element minOccurs="0" name="nivel_administrativo" type="tns:nivelAdmin"/>
       <xs:element minOccurs="0" name="codigoSIA" type="tns:CodigoSIA"/>
       <xs:element minOccurs="0" name="fecha_actualizacion_sia" type="tns:Actuacion"/>
       <xs:element minOccurs="0" name="fecha_publicacion" type="tns:Publicacion"/>
@@ -118,33 +112,9 @@
     </xs:sequence>
   </xs:complexType>
 
-  <xs:complexType name="Departamento">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="departamento" type="xs:string"/>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="UnidadAdmin">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="uni_adm_resp" type="xs:string"/>
-    </xs:sequence>
-  </xs:complexType>
-
   <xs:complexType name="Ruta">
     <xs:sequence>
       <xs:element minOccurs="0" name="ruta" type="xs:string"/>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="TipoA">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="tipo_actuacion" type="xs:string"/>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="TipoProcedimiento">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="tipoProcedimiento" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -210,7 +180,7 @@
 
   <xs:complexType name="busquedaNivelServicio">
     <xs:sequence>
-      <xs:element minOccurs="0" name="nivel_administrativo" type="tns:NivelAdmin"/>
+      <xs:element minOccurs="0" name="nivel_administrativo" type="tns:nivelAdmin"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -226,13 +196,13 @@
       <xs:element minOccurs="0" name="codigo" type="tns:Codigo"/>
       <xs:element minOccurs="0" name="nombre" type="tns:Nombre"/>
       <xs:element minOccurs="0" name="nombre_especifico" type="tns:NombreE"/>
-      <xs:element minOccurs="0" name="departamento" type="tns:Departamento"/>
-      <xs:element minOccurs="0" name="uni_adm_resp" type="tns:UnidadAdmin"/>
+      <xs:element minOccurs="0" name="departamento" type="tns:departamento"/>
+      <xs:element minOccurs="0" name="uni_adm_resp" type="tns:unidadAdmin"/>
       <xs:element minOccurs="0" name="ruta" type="tns:Ruta"/>
-      <xs:element minOccurs="0" name="tipo_actuacion" type="tns:TipoA"/>
+      <xs:element minOccurs="0" name="tipo_actuacion" type="tns:tipoA"/>
       <xs:element minOccurs="0" name="inicio_tramite" type="tns:Inicio"/>
       <xs:element minOccurs="0" name="ambito" type="tns:Ambito"/>
-      <xs:element minOccurs="0" name="nivel_administrativo" type="tns:NivelAdmin"/>
+      <xs:element minOccurs="0" name="nivel_administrativo" type="tns:nivelAdmin"/>
       <xs:element minOccurs="0" name="codigoSIA" type="tns:CodigoSIA"/>
       <xs:element minOccurs="0" name="fecha_actualizacion_sia" type="tns:Actuacion"/>
       <xs:element minOccurs="0" name="fecha_publicacion" type="tns:Publicacion"/>
@@ -265,7 +235,7 @@
 
   <xs:complexType name="busquedaDepartServicio">
     <xs:sequence>
-      <xs:element minOccurs="0" name="departamento" type="tns:Departamento"/>
+      <xs:element minOccurs="0" name="departamento" type="tns:departamento"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -277,7 +247,7 @@
 
   <xs:complexType name="busquedaUnidadProcedimiento">
     <xs:sequence>
-      <xs:element minOccurs="0" name="uni_adm_resp" type="tns:UnidadAdmin"/>
+      <xs:element minOccurs="0" name="uni_adm_resp" type="tns:unidadAdmin"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -289,7 +259,7 @@
 
   <xs:complexType name="busquedaUnidadServicio">
     <xs:sequence>
-      <xs:element minOccurs="0" name="uni_adm_resp" type="tns:UnidadAdmin"/>
+      <xs:element minOccurs="0" name="uni_adm_resp" type="tns:unidadAdmin"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -301,7 +271,7 @@
 
   <xs:complexType name="busquedaDepartProcedimiento">
     <xs:sequence>
-      <xs:element minOccurs="0" name="departamento" type="tns:Departamento"/>
+      <xs:element minOccurs="0" name="departamento" type="tns:departamento"/>
     </xs:sequence>
   </xs:complexType>
 
@@ -350,6 +320,82 @@
   <xs:complexType name="modificarDatoServicioResponse">
     <xs:sequence/>
   </xs:complexType>
+
+  <xs:simpleType name="nivelAdmin">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="NIVEL_4"/>
+      <xs:enumeration value="NIVEL_3"/>
+      <xs:enumeration value="NIVEL_2"/>
+      <xs:enumeration value="NIVEL_1"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="departamento">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="DEPAR1"/>
+      <xs:enumeration value="DEPAR2"/>
+      <xs:enumeration value="DEPAR3"/>
+      <xs:enumeration value="DEPAR4"/>
+      <xs:enumeration value="DEPAR5"/>
+      <xs:enumeration value="DEPAR6"/>
+      <xs:enumeration value="DEPAR7"/>
+      <xs:enumeration value="DEPAR8"/>
+      <xs:enumeration value="DEPAR9"/>
+      <xs:enumeration value="DEPAR10"/>
+      <xs:enumeration value="DEPAR11"/>
+      <xs:enumeration value="DEPAR12"/>
+      <xs:enumeration value="DEPAR13"/>
+      <xs:enumeration value="DEPAR14"/>
+      <xs:enumeration value="DEPAR15"/>
+      <xs:enumeration value="DEPAR16"/>
+      <xs:enumeration value="DEPAR17"/>
+      <xs:enumeration value="DEPAR18"/>
+      <xs:enumeration value="DEPAR19"/>
+      <xs:enumeration value="DEPAR20"/>
+      <xs:enumeration value="DEPAR21"/>
+      <xs:enumeration value="DEPAR22"/>
+      <xs:enumeration value="DEPAR23"/>
+      <xs:enumeration value="DEPAR24"/>
+      <xs:enumeration value="DEPAR25"/>
+      <xs:enumeration value="DEPAR26"/>
+      <xs:enumeration value="DEPAR27"/>
+      <xs:enumeration value="DEPAR28"/>
+      <xs:enumeration value="DEPAR29"/>
+      <xs:enumeration value="DEPAR30"/>
+      <xs:enumeration value="DEPAR31"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="unidadAdmin">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OPCION1"/>
+      <xs:enumeration value="OPCION2"/>
+      <xs:enumeration value="OPCION3"/>
+      <xs:enumeration value="OPCION4"/>
+      <xs:enumeration value="OPCION5"/>
+      <xs:enumeration value="OPCION6"/>
+      <xs:enumeration value="OPCION7"/>
+      <xs:enumeration value="OPCION8"/>
+      <xs:enumeration value="OPCION9"/>
+      <xs:enumeration value="OPCION10"/>
+      <xs:enumeration value="OPCION11"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="tipoA">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OPCION1"/>
+      <xs:enumeration value="OPCION2"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="tipoProcedimiento">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="OPCION1"/>
+      <xs:enumeration value="OPCION2"/>
+      <xs:enumeration value="OPCION3"/>
+    </xs:restriction>
+  </xs:simpleType>
 
 </xs:schema>
   </wsdl:types>

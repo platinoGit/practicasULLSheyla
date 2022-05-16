@@ -6,12 +6,6 @@ Anotaciones del proyecto:
 - Entidad:
 	- si el fichero entidad lo dejo solo con el ID
 	- si deberia ponerle cardinalidades y más cosas a los ficheros
-	- deberia crear mas entidades?
-- falta hacer el controlador
-- terminar las clases logic
 - hacer el datasource
-- mappers
-- a parte de los generic dao, deberia hacer alguno mas especifico?
-- las entidades que hice son las correctas?
 
 - Entrypoint: he añadido un fichero con un builder, faltaría ver si está bien y cómo usarlo

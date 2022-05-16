@@ -12,12 +12,11 @@ import webService.UnidadAdmin;
 public class ProcedimientosLogic {
 
 	public Controlador controlador;
-	public void crearProcedimiento(Id identificador, Exchange exchange) {
-		// Debería hacer alguna comprobación?
+	public void crearProcedimiento(DatosProcedimientos identificador, Exchange exchange) {
 		controlador.crearProcedimiento(identificador, exchange);
 	}
 	
-	public void modificarProcedimiento(Id identificador, Exchange exchange) {
+	public void modificarProcedimiento(DatosProcedimientos identificador, Exchange exchange) {
 		controlador.modificarProcedimiento(identificador, exchange);
 	}
 	
@@ -25,15 +24,15 @@ public class ProcedimientosLogic {
 		controlador.eliminarProcedimiento(identificador, exchange);
 	}
 	
-	public DatosProcedimientos busquedaUnidadAdminProcedimiento(UnidadAdmin uni_adm_resp, Exchange exchange) {
+	public DatosProcedimientos busquedaUnidadAdminProcedimiento(UnidadAdmin uni_adm_resp, Exchange exchange) throws Exception {
 		return controlador.busquedaUnidadAdminProcedimiento(uni_adm_resp, exchange);
 	}
 	
-	public DatosProcedimientos busquedaNivelAdminProcedimiento(NivelAdmin nivel_administrativo, Exchange exchange) {
+	public DatosProcedimientos busquedaNivelAdminProcedimiento(NivelAdmin nivel_administrativo, Exchange exchange) throws Exception {
 		return controlador.busquedaNivelAdminProcedimiento(nivel_administrativo, exchange);
 	}
 	
-	public DatosProcedimientos busquedaDepartamentoProcedimiento(Departamento departamento, Exchange exchange) {
+	public DatosProcedimientos busquedaDepartamentoProcedimiento(Departamento departamento, Exchange exchange) throws Exception {
 		return controlador.busquedaDepartamentoProcedimiento(departamento, exchange);
 	}
 }

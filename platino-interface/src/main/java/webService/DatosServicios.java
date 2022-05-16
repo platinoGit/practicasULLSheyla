@@ -59,13 +59,20 @@ public class DatosServicios {
 		return departamento;
 	}
 	public void setDepartamento(Departamento departamento) {
-		this.departamento = departamento;
+		
+		for (Departamento depart: Departamento.values()) {
+			if (depart == departamento)
+				this.departamento = depart;
+		}
 	}
 	public UnidadAdmin getUni_adm_resp() {
 		return uni_adm_resp;
 	}
 	public void setUni_adm_resp(UnidadAdmin uni_adm_resp) {
-		this.uni_adm_resp = uni_adm_resp;
+		for (UnidadAdmin unidad: UnidadAdmin.values()) {
+			if (unidad == uni_adm_resp)
+				this.uni_adm_resp = unidad;
+		}
 	}
 	public Ruta getRuta() {
 		return ruta;
@@ -77,7 +84,10 @@ public class DatosServicios {
 		return tipo_actuacion;
 	}
 	public void setTipo_actuacion(TipoA tipo_actuacion) {
-		this.tipo_actuacion = tipo_actuacion;
+		for (TipoA tipoa: TipoA.values()) {
+			if (tipoa == tipo_actuacion)
+				this.tipo_actuacion = tipoa;
+		}
 	}
 	public Inicio getInicio_tramite() {
 		return inicio_tramite;
@@ -95,7 +105,10 @@ public class DatosServicios {
 		return nivel_administrativo;
 	}
 	public void setNivel_administrativo(NivelAdmin nivel_administrativo) {
-		this.nivel_administrativo = nivel_administrativo;
+		for (NivelAdmin nivel: NivelAdmin.values()) {
+			if (nivel == nivel_administrativo)
+				this.nivel_administrativo = nivel;
+		}
 	}
 	public CodigoSIA getCodigoSIA() {
 		return codigoSIA;

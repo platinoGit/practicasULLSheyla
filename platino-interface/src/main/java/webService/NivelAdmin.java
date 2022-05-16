@@ -1,29 +1,14 @@
 package webService;
 
-import javax.xml.bind.annotation.XmlAccessorType;
-import javax.xml.bind.annotation.XmlAccessType;
-import javax.xml.bind.annotation.XmlType;
+public enum NivelAdmin {
 
-@XmlAccessorType(XmlAccessType.FIELD)
-@XmlType(name = "NivelAdmin", propOrder = {
-		"nivel_administrativo"
-})
+	// Aquí en el WSDL debería ser tipo complex type
+	NIVEL_4("Tramitación electrónica completa"), NIVEL_3("Descarga y envío electrónico de formularios"), NIVEL_2("Descarga formularios"), NIVEL_1("Información");
 
-public class NivelAdmin {
-
-	protected String nivel_administrativo;
-
-	/**
-	 * @return the nivel_administrativo
-	 */
-	public String getNivel_administrativo() {
-		return nivel_administrativo;
-	}
-
-	/**
-	 * @param nivel_administrativo the nivel_administrativo to set
-	 */
-	public void setNivel_administrativo(String nivel_administrativo) {
-		this.nivel_administrativo = nivel_administrativo;
-	}
+	public String nivelAdmin;
+	
+	// Aquí no deja ser público
+	private NivelAdmin(String nivelAdmin) {
+		this.nivelAdmin = nivelAdmin;
+	} 
 }

@@ -1,4 +1,4 @@
-package es.gobcan.platino.servicios.opendata.business.routes;
+package es.gobcan.platino.servicios.opendata.Business.routes;
 
 import org.apache.camel.builder.RouteBuilder;
 
@@ -7,10 +7,9 @@ public class PlatinoBusinessRoutes extends RouteBuilder {
 	@Override
 	public void configure() throws Exception {
 		
-		//Recordar que no tengo declaradas las opciones
-		// Como puedo redireccionar los métodos al platinoWebBusinessLogic
+		// Redireccionar los métodos al platinoWebBusinessLogic
 		
-		from(PlatinoRoutes.BUSSINES_ROUTES).routeId(PlatinoRoutes.BUSINESS_ROUTE_ID)
+		from(PlatinoBusinessRoutes.BUSINESS_ROUTES).routeId("platino-Business")
 		
 			.doTry()
 			.choice()
@@ -21,55 +20,55 @@ public class PlatinoBusinessRoutes extends RouteBuilder {
 			
 			
 			.when(header(OPERATION_SERVICE).isEqualTo(PlatinoOperations.UNIDAD_ADMINISTRATIVA_SERVICIO))
-			.to(PlatinoBusinessRouteName.UNIDAD_ADMINISTRATIVA_SERVICIO)
+			.to("bean:BusinessLogic?method=busquedaUnidadAdminServicio")
 			
 			.when(header(OPERATION_SERVICE).isEqualTo(PlatinoOperations.UNIDAD_ADMINISTRATIVA_PROCEDIMIENTO))
-			.to(PlatinoBusinessRouteName.UNIDAD_ADMINISTRATIVA_PROCEDIMIENTO)
+			.to("bean:BusinessLogic?method=busquedaUnidadAdminProcedimiento")
 			
 			//Búsqueda por departamento
 			
 			
 			.when(header(OPERATION_SERVICE).isEqualTo(PlatinoOperations.DEPARTAMENTO_SERVICO))
-			.to(PlatinoBusinessRouteName.DEPARTAMENTO_SERVICIO)
+			.to("bean:BusinessLogic?method=busquedaDepartamentoServicio")
 			
 			.when(header(OPERATION_SERVICE).isEqualTo(PlatinoOperations.DEPARTAMENTO_PROCEDIMIENTO))
-			.to(PlatinoBusinessRouteName.DEPARTAMENTO_PROCEDIMIENTO)
+			.to("bean:BusinessLogic?method=busquedaDepartamentoProcedimiento")
 			
 			//Búsqueda por gestión administrativa
 			
 			
 			.when(header(OPERATION_SERVICE).isEqualTo(PlatinoOperations.GESTION_ADMINISTRATIVA_SERVICIOS))
-			.to(PlatinoBusinessRouteName.GESTION_ADMINISTRATIVA_SERVICIOS)
+			.to("bean:BusinessLogic?method=busquedaNivelAdminServicio")
 			
 			.when(header(OPERATION_SERVICE).isEqualTo(PlatinoOperations.GESTION_ADMINISTRATIVA_PROCEDIMIENTOS))
-			.to(PlatinoBusinessRouteName.GESTION_ADMINISTRATIVA_PROCEDIMIENTOS)
+			.to("bean:BusinessLogic?method=busquedaNivelAdminProcedimiento")
 			
 			//Crear procedimiento o servicio
 			
 			
 			.when(header(OPERATION_SERVICE).isEqualTo(PlatinoOperations.CREAR_SERVICIOS))
-			.to(PlatinoBusinessRouteName.CREAR_SERVICIOS)
+			.to("bean:BusinessLogic?method=crearServicio")
 			
 			.when(header(OPERATION_SERVICE).isEqualTo(PlatinoOperations.CREAR_PROCEDIMIENTOS))
-			.to(PlatinoBusinessRouteName.CREAR_PROCEDIMIENTOS)
+			.to("bean:BusinessLogic?method=crearProcedimiento")
 			
 			//Modificar procedimiento o servicio
 			
 			
 			.when(header(OPERATION_SERVICE).isEqualTo(PlatinoOperations.MODIFICAR_SERVICIOS))
-			.to(PlatinoBusinessRouteName.MODIFICAR_SERVICIOS)
+			.to("bean:BusinessLogic?method=modificarServicio")
 			
 			.when(header(OPERATION_SERVICE).isEqualTo(PlatinoOperations.MODIFICAR_PROCEDIMIENTOS))
-			.to(PlatinoBusinessRouteName.MODIFICAR_PROCEDIMIENTOS)
+			.to("bean:BusinessLogic?method=modificarProcedimiento")
 			
 			//Eliminar procedimiento o servicio
 			
 			
 			.when(header(OPERATION_SERVICE).isEqualTo(PlatinoOperations.ELIMINAR_SERVICIOS))
-			.to(PlatinoBusinessRouteName.ELIMINAR_SERVICIOS)
+			.to("bean:BusinessLogic?method=eliminarServicio")
 			
 			.when(header(OPERATION_SERVICE).isEqualTo(PlatinoOperations.ELIMINAR_PROCEDIMIENTOS))
-			.to(PlatinoBusinessRouteName.ELIMINAR_PROCEDIMIENTOS)
+			.to("bean:BusinessLogic?method=eliminarProcedimiento")
 			
 	}
 }

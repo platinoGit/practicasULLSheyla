@@ -14,6 +14,7 @@ import webService.Departamento;
 import webService.Familia;
 import webService.FechaFin;
 import webService.FechaInicio;
+import webService.Id;
 import webService.Inicio;
 import webService.Modificacion;
 import webService.NivelAdmin;
@@ -34,6 +35,9 @@ public class ProcedimientoEntity extends Entidad implements Serializable {
 	/**Serial version por defecto*/
 	private static final long serialVersionUID = 1L;
 
+	@Column(nullable = false, name = "id")
+	private Id id;
+	
 	@Column(nullable = false, name = "codigo")
 	private Codigo codigo;
 	
@@ -241,5 +245,13 @@ public class ProcedimientoEntity extends Entidad implements Serializable {
 
 	public void setObs(Observaciones obs) {
 		this.obs = obs;
+	}
+
+	public Id getId() {
+		return id;
+	}
+
+	public void setId(Id id) {
+		this.id = id;
 	}
 }

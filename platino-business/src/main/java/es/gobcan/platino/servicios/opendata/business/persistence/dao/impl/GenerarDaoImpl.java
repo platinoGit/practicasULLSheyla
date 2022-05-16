@@ -74,52 +74,6 @@ public abstract class GenerarDaoImpl<E, I extends Serializable> implements Gener
 	
 	@Override
 	@Transactional
-	public E busquedaUnidad(E unidad) throws Exception {
-		
-		// Debería aquí crear una lista para todos los resultados?
-		try {
-			E objeto = this.getEntityManager().find(entityClass, unidad);
-			if (objeto == null) {
-				throw new Exception(MENSAJE_ERROR);
-			}
-			return objeto;
-		} catch (Exception e){
-			throw new Exception (e.getMessage(), e);
-		}
-	}
-	
-	@Override
-	@Transactional
-	public E busquedaDepartamento(E departamento) throws Exception {
-		
-		try {
-			E objeto = this.getEntityManager().find(entityClass, departamento);
-			if (objeto == null) {
-				throw new Exception(MENSAJE_ERROR);
-			}
-			return objeto;
-		} catch (Exception e){
-			throw new Exception (e.getMessage(), e);
-		
-		}
-	}
-	@Override
-	@Transactional
-	public E busquedaGestion(E gestion) throws Exception {
-		
-		try {
-			E objeto = this.getEntityManager().find(entityClass, gestion);
-			if (objeto == null) {
-				throw new Exception(MENSAJE_ERROR);
-			}
-			return objeto;
-		} catch (Exception e){
-			throw new Exception (e.getMessage(), e);
-		}
-	}
-	
-	@Override
-	@Transactional
 	public E find(E identificador) throws Exception {
 		
 		try {
@@ -132,17 +86,5 @@ public abstract class GenerarDaoImpl<E, I extends Serializable> implements Gener
 			throw new Exception (e.getMessage(), e);
 		}
 
-	}
-	
-	@Override
-	@Transactional
-	public void update(E entidad) throws Exception {
-		
-		try {
-			this.getEntityManager().merge(entidad);
-			this.getEntityManager().flush();
-		} catch (Exception e) {
-			throw new Exception (e.getMessage(),e);
-		}
 	}
 }
